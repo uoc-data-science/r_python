@@ -1,4 +1,4 @@
-![uzk_logo](../uzk.png)
+![uzk_logo](uzk.png)
 
 # Data manipulation in Python and R
 
