@@ -125,23 +125,25 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Put functions on existing columns and add new columns including the result of the applied function. If you additionally want to drop the old variable/column, use 'transmute'.
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/mutate
+Good help, tutorials: 
 
-1. ...
-1. ...
-1. ...
+1. https://r4ds.had.co.nz/transform.html#add-new-variables-with-mutate
+1. https://cran.r-project.org/web/packages/dplyr/dplyr.pdf - page 45
+1. https://youtu.be/2dFpblO7MB8
 
 Working example (asap):
 
 ```R
+mutate(mtcars, displ_l = disp / 61.0237)
+transmute(mtcars, displ_l = disp / 61.0237)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: Put functions on existing columns and add new columns including the result of the applied function.
+Documentation: https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming
 Good help, tutorials:
 
 1. ...
