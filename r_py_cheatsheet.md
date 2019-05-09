@@ -64,7 +64,7 @@ Good help, tutorials:
 
 Working example (asap):
 
-```
+```R
 library(tidyverse)
 library(ggplot2)
 
@@ -83,7 +83,7 @@ Good help, tutorials:
 
 Working example (asap):
 
-```
+```Python
 from plotnine.data import mpg
 
 filtered = mpg[mpg.cty < 20]
