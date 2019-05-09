@@ -56,7 +56,7 @@ Working example (asap):
 ### R
 
 Purpose: Use "filter" to find rows/cases meeting certain conditions.<br>
-Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter<br>
 Good help, tutorials: 
 
 1. [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
