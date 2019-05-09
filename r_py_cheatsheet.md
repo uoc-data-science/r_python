@@ -90,13 +90,15 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Unordered observations. Arrange reorders observations.
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/arrange
+Good help, tutorials: 
 
-1. ...
-1. ...
-1. ...
+iris = read.csv("iris.csv")
+
+1. iris_sorted = arrange(iris, sepal.length)
+2. iris_sorted2 = arrange(iris, desc(sepal.length), sepal.width)
+3. ...
 
 Working example (asap):
 
@@ -107,7 +109,9 @@ Working example (asap):
 
 Purpose:
 Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
-Good help, tutorials:
+Purpose: Unordered observations. Arrange reorders observations.
+Documentation: http://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html
+Good help, tutorials: -
 
 import pandas as pd
 path = "./iris.csv"
