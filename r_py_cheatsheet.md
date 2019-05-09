@@ -90,19 +90,41 @@ Working example (asap):
 
 ### R
 
-Purpose: Unordered observations. Arrange reorders observations.<br>
-Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/arrange<br>
-Good help, tutorials: 
+Purpose: When the dataset is undordered using **arrange()** will reorder rows by values of one or more columns.<br><br>
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/arrange <br><br>
+Good help, tutorials:
+
+1. https://www.datanovia.com/en/lessons/reorder-data-frame-rows-in-r/
+2. https://www.youtube.com/watch?v=mcowyd3sgSA
+3. http://www.datasciencemadesimple.com/sorting-dataframe-r-using-dplyr/ <br><br>
+
+
+**Examples:**
+<br><br>
+```R
+library(dplyr)
 
 iris = read.csv("iris.csv")
-
-1. iris_sorted = arrange(iris, sepal.length)
-2. iris_sorted2 = arrange(iris, desc(sepal.length), sepal.width)
-3. ...
-
-Working example (asap):
+```
+<br>
+Reorder rows by sepal.length in **ascending** order:
+```R
+iris_sorted_asc = arrange(iris, sepal.length)
+```
+<br>
+Reorder rows by sepal.length in **descending** order using **-** or **desc()**:
+```R
+iris_sorted_desc = arrange(iris, desc(sepal.length))
+```
 
 ```R
+iris_sorted_desc = arrange(iris, -sepal.length)
+```
+<br>
+Additionally it can be sorted by **more than one** value.
+Simply add a new column to the expression:
+```R
+iris_sorted_by_multiple_values = arrange(iris, desc(sepal.length), sepal.width)
 ```
 
 ### Python
