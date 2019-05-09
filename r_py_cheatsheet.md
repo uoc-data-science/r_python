@@ -75,7 +75,7 @@ print(greenCars)
 
 ### Python
 
-Purpose:  Use filter find rows/cases where certain conditions are meet.
+Purpose:  Use "filter" to find rows/cases meeting certain conditions.<br>
 Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html<br>
 Good help, tutorials:
 
