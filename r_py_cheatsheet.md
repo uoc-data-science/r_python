@@ -160,7 +160,7 @@ Working example (asap):
 
 ### R
 
-Purpose: 
+Purpose: Create one or more scalar variables summarizing the variables of an existing table. Tables with groups created by 'group_by()' will result in one row in the output for each group. Tables with no groups will result in one row.<br>
 Official documentation: https://dplyr.tidyverse.org/reference/summarise.html
 Good help, tutorials:
 
