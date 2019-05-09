@@ -146,13 +146,14 @@ Purpose: Put functions on existing columns and add new columns including the res
 Documentation: https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming
 Good help, tutorials:
 
-1. ...
+1. 
 1. ...
 1. ...
 
 Working example (asap):
 
 ```Python
+https://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv
 ```
 
 ---
