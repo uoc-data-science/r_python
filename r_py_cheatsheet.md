@@ -146,8 +146,8 @@ Purpose: Put functions on existing columns and add new columns including the res
 Documentation: https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming<br>
 Good help, tutorials:
 
-1. 
-1. ...
+1. https://stackoverflow.com/questions/28417293/sample-datasets-in-pandas
+1. https://vincentarelbundock.github.io/Rdatasets/datasets.html
 1. ...
 
 Working example (asap):
