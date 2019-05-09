@@ -5,7 +5,7 @@
 We translate important verbs from the `tiyverse` to their closest possible Python equivalents.
 
 > The added value lies not so much in reproducing the R documentation, but to find the matching R and Python functions that should do the exact same manipulation.
-> 
+
 _Purpose_: describe the problem that the verb tries to solve. How does it approach the problem/ how is it solved?
 
 _Official documentation_: Please link to the official documentation, if available.
