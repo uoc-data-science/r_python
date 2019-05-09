@@ -195,8 +195,11 @@ Good help, tutorials:
 Working example (asap):
 
 ```Python
-
-
+import pandas as pd
+nyc = pd.read_csv('https://raw.githubusercontent.com/ismayc/pnwflights14/master/data/flights.csv')
+nyc.head()
+nyc_grouped = nyc.groupby(['year', 'month', 'day']).sum()
+nyc_grouped.head(50)
 ```
 
 ---
