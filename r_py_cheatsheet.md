@@ -75,17 +75,19 @@ print(greenCars)
 
 ### Python
 
-Purpose: 
+Purpose:  Use filter find rows/cases where certain conditions are meet.
 Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
 
 Working example (asap):
 
-```Python
+```
+from plotnine.data import mpg
+
+filtered = mpg[mpg.cty < 20]
+print(filtered)
 ```
 
 ---
