@@ -109,7 +109,7 @@ Working example (asap):
 
 Purpose:
 Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
-Purpose: Unordered observations. Arrange reorders observations.
+Purpose: Unordered observations. Arrange reorders observations.<br>
 Documentation: http://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html
 Good help, tutorials: -
 
