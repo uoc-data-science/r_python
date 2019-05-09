@@ -55,7 +55,7 @@ Working example (asap):
 
 ### R
 
-Purpose: Use filter find rows/cases where conditions are true.
+Purpose: Use "filter" to find rows/cases meeting certain conditions.<br>
 Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter
 Good help, tutorials: 
 
