@@ -90,7 +90,7 @@ Working example (asap):
 
 ### R
 
-Purpose: When the dataset is undordered using **arrange()** will reorder rows by values of one or more columns.<br><br>
+Purpose: When the dataset is unordered using **arrange()** will reorder rows by values of one or more columns.<br><br>
 Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/arrange <br><br>
 Good help, tutorials:
 
@@ -129,23 +129,43 @@ iris_sorted_by_multiple_values = arrange(iris, desc(sepal.length), sepal.width)
 
 ### Python
 
-Purpose:
-Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
-Purpose: Unordered observations. Arrange reorders observations.<br>
-Documentation: http://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.sort.html<br>
-Good help, tutorials: -
+Purpose: When the dataset is unordered using **sort_values()** will reorder rows by values of one or more columns.<br><br>
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html <br><br>
 
+Good help, tutorials:
+
+1. https://datatofish.com/sort-pandas-dataframe/
+2. https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column
+3. https://www.geeksforgeeks.org/python-pandas-dataframe-sort_values-set-1/ <br><br>
+
+**Examples:**
+<br><br>
+```Python
 import pandas as pd
+
 path = "./iris.csv"
 df = pd.read_csv(path, sep=",")
-
-1. df = df.sort_values(by=['Sepal.Length'], ascending=[True]
-1. df = df.sort_values(by=['Sepal.Length', 'Sepal.Width'], ascending=[True, False])
-1. df = df.sort_values(by=['Sepal.Length', 'Sepal.Width'], ascending=[True, False], na_position= 'first')
-
-Working example (asap):
-
+```
+<br>
+Reorder rows by sepal.length in **ascending** order:
 ```Python
+df = df.sort_values(by=['sepal.length'], ascending=[True])
+```
+<br>
+Reorder rows by sepal.length in **descending** order:
+```Python
+df = df.sort_values(by=['sepal.length'], ascending=[False])
+```
+<br>
+Reorder rows by **more than one** value.
+Add a new column and its order orientation to the expression:
+```Python
+df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False])
+```
+<br>
+If NAs should come first add **na_position**:
+```Python
+df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False], na_position= 'first')
 ```
 
 ---
