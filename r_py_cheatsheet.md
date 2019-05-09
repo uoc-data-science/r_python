@@ -76,7 +76,7 @@ print(greenCars)
 ### Python
 
 Purpose:  Use filter find rows/cases where certain conditions are meet.
-Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html<br>
 Good help, tutorials:
 
 1. https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
