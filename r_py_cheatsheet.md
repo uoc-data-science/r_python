@@ -69,13 +69,14 @@ library(tidyverse)
 library(ggplot2)
 
 # filter for cars with city miles per gallon less than 20
-filter(mpg, cty < 20)
+greenCars <- filter(mpg, cty < 20)
+print(greenCars)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: 
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html
 Good help, tutorials:
 
 1. ...
