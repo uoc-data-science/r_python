@@ -106,12 +106,16 @@ Working example (asap):
 ### Python
 
 Purpose:
-Documentation:
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+import pandas as pd
+path = "./iris.csv"
+df = pd.read_csv(path, sep=",")
+
+1. df = df.sort_values(by=['Sepal.Length'], ascending=[True]
+1. df = df.sort_values(by=['Sepal.Length', 'Sepal.Width'], ascending=[True, False])
+1. df = df.sort_values(by=['Sepal.Length', 'Sepal.Width'], ascending=[True, False], na_position= 'first')
 
 Working example (asap):
 
