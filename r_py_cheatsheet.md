@@ -90,7 +90,7 @@ Working example (asap):
 
 ### R
 
-Purpose: Unordered observations. Arrange reorders observations.
+Purpose: Unordered observations. Arrange reorders observations.<br>
 Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/arrange
 Good help, tutorials: 
 
