@@ -55,17 +55,21 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Use filter find rows/cases where conditions are true.
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter
+Good help, tutorials: 
 
-1. ...
-2. ...
-3. ...
+1. [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
+2. https://www.guru99.com/r-select-filter-arrange.html#2
 
 Working example (asap):
 
-```R
+```
+library(tidyverse)
+library(ggplot2)
+
+# filter for cars with city miles per gallon less than 20
+filter(mpg, cty < 20)
 ```
 
 ### Python
