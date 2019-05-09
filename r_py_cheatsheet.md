@@ -160,17 +160,26 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
+Purpose: 
+Official documentation: https://dplyr.tidyverse.org/reference/summarise.html
 Good help, tutorials:
 
 1. ...
-1. ...
-1. ...
+2. ...
+3. ...
 
 Working example (asap):
 
 ```R
+install.packages("nycflights13")
+library(nycflights13)
+library(tidyverse)
+
+flights %>%
+  summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
+            avg_dep_delay = mean(dep_delay, na.rm = T) )
+
+
 ```
 
 ### Python
@@ -186,6 +195,8 @@ Good help, tutorials:
 Working example (asap):
 
 ```Python
+
+
 ```
 
 ---
@@ -204,6 +215,11 @@ Good help, tutorials:
 Working example (asap):
 
 ```R
+flights %>%
+  group_by(year, month, day) %>%
+  summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
+            avg_dep_delay = mean(dep_delay, na.rm = T) )
+
 ```
 
 ### Python
