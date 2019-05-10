@@ -18,34 +18,148 @@ _Working examples_ should be self-contained and as short as possible (asap). The
 
 ## `select`
 
+
+
 ### R
 
-Purpose:
+
+
+Purpose: Use 'select()' to choose a subset of the whole / existing dataset based on the needed columns.<br>
+
+This is useful in order to narrow down a big dataset to the elemntary data. The narrowed dataset will contain only the needed data.<br>
+
 Official documentation:
+https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/select<br>
 Good help, tutorials:
 
-1. ...
-2. ...
-3. ...
+
+
+1. https://r4ds.had.co.nz/transform.html#select
+
+
 
 Working example (asap):
 
-```R
+
+
+##save column u and column v in a new table: 
+
+#new_dataset <- select(source_dataset, cloumn_name_u, column_name_v) 
+
 ```
+
+library(nycflights13)
+
+library(tidyverse)
+
+```
+
+##explicitly choose columns:
+
+```
+
+select(flights, year, month, day)
+
+```
+
+## Leads to the output:
+
+
+
+# A tibble: 336,776 x 3
+
+    year month   day
+
+   <int> <int> <int>
+
+ 1  2013     1     1
+
+ 2  2013     1     1
+
+ 3  2013     1     1
+
+ 4  2013     1     1
+
+ 5  2013     1     1
+
+ 6  2013     1     1
+
+ 7  2013     1     1
+
+ 8  2013     1     1
+
+ 9  2013     1     1
+
+10  2013     1     1
+
+# . with 336,766 more rows
+
+
+
+##from-to selection
+
+```
+
+select(flights, year:day)
+
+```
+
+
+
+##select all columns by excluding specific columns
+
+```
+
+select(flights, -(year:day))
+
+```
+
+
 
 ### Python
 
-Purpose:
+
+
+Purpose: Use 'select()' to choose a subset of the whole / existing dataset based on the needed columns.<br>
+
+This is useful in order to narrow down a big dataset to the elemntary data. The narrowed dataset will contain only the needed data.<br>
+
 Documentation:
+https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming<br>
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+
+
+1. https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c
+
+
 
 Working example (asap):
 
-```Python
+
+
+```
+
+import pandas as pd
+
+import numpy as np
+
+df = pd.read_csv('data/sample_data.csv', index_col=0)
+
+
+
+#one column
+
+df['food']
+
+
+
+#multiple columns
+
+
+
+df[['color', 'food', 'score']]
+
 ```
 
 ---
