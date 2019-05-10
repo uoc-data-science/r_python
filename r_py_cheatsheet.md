@@ -104,27 +104,26 @@ Good help, tutorials:
 ```R
 library(dplyr)
 
-iris = read.csv("iris.csv")
-```
-<br>
-Reorder rows by sepal.length in **ascending** order:
-```R
-iris_sorted_asc = arrange(iris, sepal.length)
-```
-<br>
-Reorder rows by sepal.length in **descending** order using **-** or **desc()**:
-```R
-iris_sorted_desc = arrange(iris, desc(sepal.length))
+iris <- read.csv("iris.csv")
 ```
 
+Reorder rows by sepal.length in **ascending** order: <br>
 ```R
-iris_sorted_desc = arrange(iris, -sepal.length)
+iris_sorted_asc <- arrange(iris, sepal.length)
 ```
-<br>
+
+Reorder rows by sepal.length in **descending** order using **-** or **desc()**:<br>
+
+```R
+iris_sorted_desc <- arrange(iris, desc(sepal.length))
+
+iris_sorted_desc <- arrange(iris, -sepal.length)
+```
+
 Additionally it can be sorted by **more than one** value.
 Simply add a new column to the expression:
 ```R
-iris_sorted_by_multiple_values = arrange(iris, desc(sepal.length), sepal.width)
+iris_sorted_by_multiple_values <- arrange(iris, desc(sepal.length), sepal.width)
 ```
 
 ### Python
@@ -146,24 +145,24 @@ import pandas as pd
 path = "./iris.csv"
 df = pd.read_csv(path, sep=",")
 ```
-<br>
-Reorder rows by sepal.length in **ascending** order:
+
+Reorder rows by sepal.length in **ascending** order:<br>
 ```Python
 df = df.sort_values(by=['sepal.length'], ascending=[True])
 ```
-<br>
-Reorder rows by sepal.length in **descending** order:
+
+Reorder rows by sepal.length in **descending** order:<br>
 ```Python
 df = df.sort_values(by=['sepal.length'], ascending=[False])
 ```
-<br>
+
 Reorder rows by **more than one** value.
-Add a new column and its order orientation to the expression:
+Add a new column and its order orientation to the expression:<br>
 ```Python
 df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False])
 ```
-<br>
-If NAs should come first add **na_position**:
+
+If NAs should come first add **na_position**:<br>
 ```Python
 df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False], na_position= 'first')
 ```
