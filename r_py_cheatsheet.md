@@ -29,7 +29,7 @@ Purpose: Use 'select()' to choose a subset of the whole / existing dataset based
 This is useful in order to narrow down a big dataset to the elemntary data. The narrowed dataset will contain only the needed data.<br>
 
 Official documentation:
-
+https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/select<br>
 Good help, tutorials:
 
 
