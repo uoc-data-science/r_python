@@ -283,17 +283,26 @@ print(mtcars)
 
 ### R
 
-Purpose:
-Official documentation:
+Purpose: Create one or more scalar variables summarizing the variables of an existing table. Tables with groups created by 'group_by()' will result in one row in the output for each group. Tables with no groups will result in one row.<br>
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/summarise
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://dplyr.tidyverse.org/reference/summarise.html
+2. ...
+3. ...
 
 Working example (asap):
 
 ```R
+install.packages("nycflights13")
+library(nycflights13)
+library(tidyverse)
+
+flights %>%
+  summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
+            avg_dep_delay = mean(dep_delay, na.rm = T) )
+
+
 ```
 
 ### Python
@@ -309,6 +318,11 @@ Good help, tutorials:
 Working example (asap):
 
 ```Python
+import pandas as pd
+nyc = pd.read_csv('https://raw.githubusercontent.com/ismayc/pnwflights14/master/data/flights.csv')
+nyc.head()
+nyc_grouped = nyc.groupby(['year', 'month', 'day']).sum()
+nyc_grouped.head(50)
 ```
 
 ---
@@ -327,6 +341,11 @@ Good help, tutorials:
 Working example (asap):
 
 ```R
+flights %>%
+  group_by(year, month, day) %>%
+  summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
+            avg_dep_delay = mean(dep_delay, na.rm = T) )
+
 ```
 
 ### Python
