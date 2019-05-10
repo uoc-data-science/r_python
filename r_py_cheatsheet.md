@@ -125,7 +125,7 @@ Purpose: Use 'select()' to choose a subset of the whole / existing dataset based
 This is useful in order to narrow down a big dataset to the elemntary data. The narrowed dataset will contain only the needed data.
 
 Documentation:
-
+https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming<br>
 Good help, tutorials:
 
 
