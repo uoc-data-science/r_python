@@ -125,32 +125,41 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Put functions on existing columns and add new columns including the result of the applied function. If you additionally want to drop the old variable/column, use 'transmute'.<br>
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/mutate<br>
+Good help, tutorials: 
 
-1. ...
-1. ...
-1. ...
+1. https://r4ds.had.co.nz/transform.html#add-new-variables-with-mutate
+1. https://cran.r-project.org/web/packages/dplyr/dplyr.pdf - page 45
+1. https://youtu.be/2dFpblO7MB8
 
 Working example (asap):
 
 ```R
+mutate(mtcars, displ_l = disp / 61.0237)
+transmute(mtcars, displ_l = disp / 61.0237)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: Put functions on existing columns and add new columns including the result of the applied function.<br>
+Documentation: https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#transforming<br>
 Good help, tutorials:
 
-1. ...
-1. ...
+1. https://stackoverflow.com/questions/28417293/sample-datasets-in-pandas
+1. https://vincentarelbundock.github.io/Rdatasets/datasets.html
 1. ...
 
 Working example (asap):
 
 ```Python
+#https://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv
+import pandas as pd
+
+mtcars= pd.read_csv("https://vincentarelbundock.github.io/Rdatasets/csv/datasets/mtcars.csv")
+mtcars = mtcars.assign(displ_l = mtcars["disp"] / 61.0237)
+
+print(mtcars)
 ```
 
 ---
