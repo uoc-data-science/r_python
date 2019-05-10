@@ -40,78 +40,38 @@ Good help, tutorials:
 
 Working example (asap):
 
-
-
+``` R
 ##save column u and column v in a new table: 
 
 #new_dataset <- select(source_dataset, cloumn_name_u, column_name_v) 
-
-```
-
 library(nycflights13)
-
 library(tidyverse)
 
-```
-
 ##explicitly choose columns:
-
-```
-
 select(flights, year, month, day)
-
-```
 
 ## Leads to the output:
 
-
-
 # A tibble: 336,776 x 3
-
     year month   day
-
    <int> <int> <int>
-
  1  2013     1     1
-
  2  2013     1     1
-
  3  2013     1     1
-
  4  2013     1     1
-
  5  2013     1     1
-
  6  2013     1     1
-
  7  2013     1     1
-
  8  2013     1     1
-
  9  2013     1     1
-
 10  2013     1     1
-
 # . with 336,766 more rows
 
-
-
 ##from-to selection
-
-```
-
 select(flights, year:day)
 
-```
-
-
-
 ##select all columns by excluding specific columns
-
-```
-
 select(flights, -(year:day))
-
 ```
 
 
