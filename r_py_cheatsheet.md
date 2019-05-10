@@ -169,32 +169,39 @@ df[['color', 'food', 'score']]
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Use "filter" to find rows/cases meeting certain conditions.<br>
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter<br>
+Good help, tutorials: 
 
-1. ...
-2. ...
-3. ...
+1. [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
+2. https://www.guru99.com/r-select-filter-arrange.html#2
 
 Working example (asap):
 
 ```R
+library(tidyverse)
+library(ggplot2)
+
+# filter for cars with city miles per gallon less than 20
+greenCars <- filter(mpg, cty < 20)
+print(greenCars)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose:  Use "filter" to find rows/cases meeting certain conditions.<br>
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.filter.html<br>
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://cmdlinetips.com/2018/02/how-to-subset-pandas-dataframe-based-on-values-of-a-column/
 
 Working example (asap):
 
 ```Python
+from plotnine.data import mpg
+
+filtered = mpg[mpg.cty < 20]
+print(filtered)
 ```
 
 ---
