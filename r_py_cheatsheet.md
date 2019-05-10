@@ -220,32 +220,22 @@ Good help, tutorials:
 3. http://www.datasciencemadesimple.com/sorting-dataframe-r-using-dplyr/ <br><br>
 
 
-**Examples:**
-<br><br>
+Working example (asap):
+
 ```R
 library(dplyr)
+iris <- read.csv("iris.csv")
 
-iris = read.csv("iris.csv")
-```
-<br>
-Reorder rows by sepal.length in **ascending** order:
-```R
-iris_sorted_asc = arrange(iris, sepal.length)
-```
-<br>
-Reorder rows by sepal.length in **descending** order using **-** or **desc()**:
-```R
-iris_sorted_desc = arrange(iris, desc(sepal.length))
-```
+# Reorder rows by sepal.length in *ascending* order:
+iris_sorted_asc <- arrange(iris, sepal.length)
 
-```R
-iris_sorted_desc = arrange(iris, -sepal.length)
-```
-<br>
-Additionally it can be sorted by **more than one** value.
-Simply add a new column to the expression:
-```R
-iris_sorted_by_multiple_values = arrange(iris, desc(sepal.length), sepal.width)
+# Reorder rows by sepal.length in *descending* order using '-' or 'desc()':
+iris_sorted_desc <- arrange(iris, desc(sepal.length))
+iris_sorted_desc <- arrange(iris, -sepal.length)
+
+# Additionally it can be sorted by *more than one* value.
+# Simply add a new column to the expression:
+iris_sorted_by_multiple_values <- arrange(iris, desc(sepal.length), sepal.width)
 ```
 
 ### Python
@@ -259,33 +249,24 @@ Good help, tutorials:
 2. https://stackoverflow.com/questions/37787698/how-to-sort-pandas-dataframe-from-one-column
 3. https://www.geeksforgeeks.org/python-pandas-dataframe-sort_values-set-1/ <br><br>
 
-**Examples:**
-<br><br>
+Working example (asap):
 ```Python
 import pandas as pd
 
 path = "./iris.csv"
 df = pd.read_csv(path, sep=",")
-```
-<br>
-Reorder rows by sepal.length in **ascending** order:
-```Python
+
+# Reorder rows by sepal.length in *ascending* order:
 df = df.sort_values(by=['sepal.length'], ascending=[True])
-```
-<br>
-Reorder rows by sepal.length in **descending** order:
-```Python
+
+# Reorder rows by sepal.length in *descending* order:
 df = df.sort_values(by=['sepal.length'], ascending=[False])
-```
-<br>
-Reorder rows by **more than one** value.
-Add a new column and its order orientation to the expression:
-```Python
+
+# Reorder rows by *more than one* value.
+# Add a new column and its order orientation to the expression:
 df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False])
-```
-<br>
-If NAs should come first add **na_position**:
-```Python
+
+# If NAs should come first add *na_position*:
 df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False], na_position= 'first')
 ```
 
