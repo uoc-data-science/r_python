@@ -120,7 +120,7 @@ select(flights, -(year:day))
 
 
 
-Purpose: Use 'select()' to choose a subset of the whole / existing dataset based on the needed columns.
+Purpose: Use 'select()' to choose a subset of the whole / existing dataset based on the needed columns.<br>
 
 This is useful in order to narrow down a big dataset to the elemntary data. The narrowed dataset will contain only the needed data.
 
