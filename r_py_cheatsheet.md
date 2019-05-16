@@ -160,15 +160,15 @@ Working example (asap):
 
 ### R
 
-Purpose: Create one or more scalar variables summarizing the variables of an existing table. Tables with groups created by 'group_by()' will result in one row in the output for each group. Tables with no groups will result in one row.<br>
-Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/summarise
-Good help, tutorials:
+_Purpose:_ Create one or more scalar variables summarizing the variables of an existing table. Tables with groups created by 'group_by()' will result in one row in the output for each group. Tables with no groups will result in one row.
+
+_Official documentation:_ https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/summarise 
+
+_Good help, tutorials:_
 
 1. https://dplyr.tidyverse.org/reference/summarise.html
-2. ...
-3. ...
 
-Working example (asap):
+Working example:
 
 ```R
 install.packages("nycflights13")
@@ -178,27 +178,27 @@ library(tidyverse)
 flights %>%
   summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
             avg_dep_delay = mean(dep_delay, na.rm = T) )
-
-
 ```
 
 ### Python
 
-Purpose:
-Documentation:
-Good help, tutorials:
+_Purpose:_
+
+_Documentation:_
+
+_Good help, tutorials:_
 
 1. ...
-1. ...
-1. ...
+2. ...
+3. ...
 
-Working example (asap):
+Working example:
 
 ```Python
 import pandas as pd
 nyc = pd.read_csv('https://raw.githubusercontent.com/ismayc/pnwflights14/master/data/flights.csv')
 nyc.head()
-nyc_grouped = nyc.groupby(['year', 'month', 'day']).sum()
+nyc_grouped = nyc.groupby(['year', 'month', 'day'])
 nyc_grouped.head(50)
 ```
 
@@ -207,22 +207,24 @@ nyc_grouped.head(50)
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+_Purpose:_ group data by one variable to calculate aggregated data for another
+variable
+
+_Official documentation:_
+
+_Good help, tutorials:_   <br>
 
 1. ...
 1. ...
 1. ...
 
-Working example (asap):
+Working example:
 
 ```R
 flights %>%
   group_by(year, month, day) %>%
   summarize(sum_dep_delay = sum(dep_delay, na.rm = T),
-            avg_dep_delay = mean(dep_delay, na.rm = T) )
-
+            avg_dep_delay = mean(dep_delay, na.rm = T))
 ```
 
 ### Python
@@ -235,9 +237,14 @@ Good help, tutorials:
 1. ...
 1. ...
 
-Working example (asap):
+Working example:
 
 ```Python
+import pandas as pd
+nyc = pd.read_csv('https://raw.githubusercontent.com/ismayc/pnwflights14/master/data/flights.csv')
+nyc.head()
+nyc_grouped = nyc.groupby(['year', 'month', 'day']).sum()
+nyc_grouped.head(50)
 ```
 
 ---
