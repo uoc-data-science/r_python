@@ -368,32 +368,58 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
+Purpose: Gather takes multiple columns and collapses into key-value pairs, duplicating all other columns as needed. You use gather() when you notice that you have columns that are not variables.
+
+Official documentation: [R Documentation](https://www.rdocumentation.org/packages/tidyr/versions/0.8.3/topics/gather)
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. [Stats Education](http://statseducation.com/Introduction-to-R/modules/tidy%20data/gather/)
 
 Working example (asap):
 
 ```R
+library(tidyverse)
+
+# prepare ungathered data set
+product <- c("Product A", "Product B", "Product C")
+customerA <- c(6886, 5486, 1865)
+customerB <- c(4896, 9865, 3154)
+
+# ungathered data set has multiple columns with sales numbers
+ungathered_data <- data.frame(product, customerA, customerB)
+
+# gathered data set has only one column with sales numbers
+gathered_data <- gather(data = ungathered_data, "customer", "sales", 2:3)
+
+print(gathered_data)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: Unpivots a DataFrame from wide format to long format, optionally leaving identifier variables set.
+
+This function is useful to massage a DataFrame into a format where one or more columns are identifier variables (id_vars), while all other columns, considered measured variables (value_vars), are “unpivoted” to the row axis, leaving just two non-identifier columns, ‘variable’ and ‘value’.
+
+Documentation: [Pandas Documentation](http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html#pandas.melt)
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. [Gather / Melt Comparison](http://connor-johnson.com/2014/08/28/tidyr-and-pandas-gather-and-melt/)
 
 Working example (asap):
 
 ```Python
+import pandas as pd
+
+# prepare ungathered data set
+# ungathered data set has multiple columns with sales numbers
+ungathered_data = pd.DataFrame({'product': {0: 'A', 1: 'B', 2: 'C'},
+                    'customer A': {0: 6886, 1: 5486, 2: 1865},
+                    'customer B': {0: 4896, 1: 9865, 2: 3154}})
+
+# gathered data set has only one column with sales numbers
+gathered_data = pd.melt(ungathered_data, var_name= "customer", value_name= "sales", id_vars = ['product'], value_vars= ['customer A', 'customer B'])
+
+print(gathered_data)
 ```
 
 ---
