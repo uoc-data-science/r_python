@@ -405,17 +405,21 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: spread() takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.
 
-1. ...
-1. ...
-1. ...
+Official documentation: https://www.rdocumentation.org/packages/tidyr/versions/0.8.3/topics/spread
+Good help, tutorials:
+1. https://r4ds.had.co.nz/tidy-data.html#spreading
 
 Working example (asap):
 
 ```R
+
+library(tidyverse)
+#print(table2)
+
+table2 %>%
+  spread(key = type, value = count)
 ```
 
 ### Python
