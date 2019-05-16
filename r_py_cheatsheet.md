@@ -510,7 +510,7 @@ Working example (asap):
 ### R
 
 Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame<br />
-Official documentation: https://dplyr.tidyverse.org/reference/join.html
+Official documentation: https://dplyr.tidyverse.org/reference/join.html<br />
 Good help, tutorials:
 
 1. https://stat545.com/bit001_dplyr-cheatsheet.html
@@ -537,8 +537,8 @@ employRight <- right_join(employ, employ2)
 
 ### Python
 
-Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame
-Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html
+Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame<br />
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html<br />
 Good help, tutorials:
 
 1. https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
