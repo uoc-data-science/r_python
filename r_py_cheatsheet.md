@@ -509,7 +509,7 @@ Working example (asap):
 
 ### R
 
-Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame
+Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame<br />
 Official documentation: https://dplyr.tidyverse.org/reference/join.html
 Good help, tutorials:
 
