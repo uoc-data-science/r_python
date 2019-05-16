@@ -424,17 +424,18 @@ table2 %>%
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: pivot_table() takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://community.periscopedata.com/t/q5gk76/pivoting-and-melting-dataframes
 
 Working example (asap):
 
 ```Python
+import pandas as pd
+df=pd.pivot_table(df,index='mydate',columns='platform',values='count')
+df=df.reset_index()
 ```
 
 ---
