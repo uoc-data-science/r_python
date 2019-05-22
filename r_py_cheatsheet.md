@@ -612,17 +612,29 @@ employRight = pd.merge(employ, employ2,  how='right')
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: Select the data based on a list of other data. For example select the most popular flight destination from a dataframe of flights. Is also able to work on multiple columns.
+Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/join#1_sections
+Function names: semi_join, anti_join
 
-1. ...
-1. ...
-1. ...
+1. https://r4ds.had.co.nz/relational-data.html#filtering-joins
+1. http://stat545.com/bit001_dplyr-cheatsheet.html#semi_joinpublishers-superheroes
 
 Working example (asap):
 
 ```R
+library(nycflights13)
+library(tidyverse)
+# Get the top Flight destinations
+top_dest <- flights %>%
+  count(dest, sort = TRUE) %>%
+  head(10)
+flights %>% 
+  semi_join(top_dest)
+
+# Associate the planes with the flights
+flights %>%
+  anti_join(planes, by = "tailnum") %>%
+  count(tailnum, sort = TRUE)
 ```
 
 ### Python
