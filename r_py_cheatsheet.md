@@ -637,9 +637,33 @@ Working example (asap):
 ```Python
 import pandas as pd
 df = pd.DataFrame({'user':[1, 1, 2, 3, 3, 3], 'x':['a', 'b', 'a', 'a', 'c', 'd'], 'y':1})
+
 print(df)
+#   user  x  y
+#0     1  a  1
+#1     1  b  1
+#2     2  a  1
+#3     3  a  1
+#4     3  c  1
+#5     3  d  1
+
+
 df = df.set_index(['user','x'])
 mux = pd.MultiIndex.from_product([df.index.levels[0], df.index.levels[1]],names=['user','x'])
 df = df.reindex(mux, fill_value=0).reset_index()
+
 print(df)
+    user  x  y
+#0      1  a  1
+#1      1  b  1
+#2      1  c  0
+#3      1  d  0
+#4      2  a  1
+#5      2  b  0
+#6      2  c  0
+#7      2  d  0
+#8      3  a  1
+#9      3  b  0
+#10     3  c  1
+#11     3  d  1
 ```
