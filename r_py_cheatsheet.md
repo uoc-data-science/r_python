@@ -434,8 +434,18 @@ Working example (asap):
 
 ```Python
 import pandas as pd
-df=pd.pivot_table(df,index='mydate',columns='platform',values='count')
-df=df.reset_index()
+
+#sample data
+d = {'country': ['Afghanistan', 'Afghanistan', 'Afghanistan', 'Afghanistan', 'Brazil', 'Brazil', 'Brazil', 'Brazil'], 'year': [1999, 1999, 2000, 2000, 1999, 1999, 2000, 2000,], 'type': ['cases', 'population', 'cases', 'population', 'cases', 'population', 'cases', 'population'], 'count': [745, 19987071, 2666, 20595360, 37737, 172006362, 80488, 174504898]}
+
+#log sample data as table
+df = pd.DataFrame(data=d)
+print(df)
+
+#log spread data
+df=pd.pivot_table(df,index='country',columns='type',values='count')
+
+print(df)
 ```
 
 ---
