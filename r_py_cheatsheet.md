@@ -91,6 +91,7 @@ Good help, tutorials:
 
 
 1. https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c
+2. https://www.youtube.com/watch?v=iaziBEhdyRk
 
 
 
@@ -106,19 +107,32 @@ import numpy as np
 
 df = pd.read_csv('data/sample_data.csv', index_col=0)
 
-
-
 #one column
-
 df['food']
 
-
-
 #multiple columns
-
-
-
 df[['color', 'food', 'score']]
+
+#select rows from:until
+df[2:7]
+
+#select rows :until / from:
+df[:7] / df[2:]
+
+#select every 10th row
+df[::10]
+
+#select first 5 rows / column A
+df.loc[0:5, 'A']
+
+#instead of loc you can use iloc if you want to get eg 1 row
+df.eloc[0:5, 0]
+
+#get all rows where column A is smaller 2
+df.loc[df.loc[:, 'A'] < 2]
+
+#lambda functions for selecting can be wrote in one line
+df.loc[lambda d: (d.A > 7) & (d.B < 4)]
 
 ```
 
