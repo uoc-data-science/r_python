@@ -624,8 +624,8 @@ print(data)
 
 ### Python
 
-Purpose: Turns implicit missing values into explicit missing values. 
-Documentation:  http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html
+Purpose: Turns implicit missing values into explicit missing values.<br>
+Documentation:<br>  http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html<br>
                 http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.from_product.html
 
 Good help, tutorials:
