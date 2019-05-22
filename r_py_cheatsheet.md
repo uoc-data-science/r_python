@@ -653,7 +653,7 @@ mux = pd.MultiIndex.from_product([df.index.levels[0], df.index.levels[1]],names=
 df = df.reindex(mux, fill_value=0).reset_index()
 
 print(df)
-    user  x  y
+#    user  x  y
 #0      1  a  1
 #1      1  b  1
 #2      1  c  0
