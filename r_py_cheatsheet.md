@@ -549,34 +549,55 @@ Working example (asap):
 
 ### R
 
-Purpose:
-Official documentation:
+Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame<br />
+Official documentation: https://dplyr.tidyverse.org/reference/join.html<br />
 Good help, tutorials:
 
-1. ...
+1. https://stat545.com/bit001_dplyr-cheatsheet.html
 2. ...
 3. ...
 
 Working example (asap):
 
 ```R
+employee <- c('John Doe','Peter Gynn','Jolie Hope')
+salary <- c(21000, 23400, 26800)
+employ <- data.frame(employee, salary)
+
+employee <- c('John Doe','Peter Gynn','Max Mustermann')
+size <- c(220, 130, 160)
+employ2 <- data.frame(employee, size)
+
+#join on equally named columns
+employInner <- inner_join(employ, employ2)
+employFull <- full_join(employ, employ2)
+employLeft <- left_join(employ, employ2)
+employRight <- right_join(employ, employ2)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: Standard join (inner, full, left, right) --> augment a data frame with information from another data frame<br />
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.merge.html<br />
 Good help, tutorials:
 
-1. ...
-1. ...
+1. https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+1. https://jakevdp.github.io/PythonDataScienceHandbook/03.07-merge-and-join.html
 1. ...
 
 Working example (asap):
 
 ```Python
-```
+import pandas as pd
 
+employ = pd.DataFrame({'employee': ['John Doe','Peter Gynn','Jolie Hope'], 'salary': [21000, 23400, 26800]})
+employ2 = pd.DataFrame({'employee': ['John Doe','Peter Gynn','Max Mustermann'], 'size': [220, 130, 160]})
+
+employInner = pd.merge(employ, employ2,  how='inner')
+employOuter = pd.merge(employ, employ2,  how='outer')
+employLeft = pd.merge(employ, employ2,  how='left')
+employRight = pd.merge(employ, employ2,  how='right')
+```
 ---
 
 ## `filtering joins`
