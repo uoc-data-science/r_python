@@ -624,15 +624,22 @@ print(data)
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: Turns implicit missing values into explicit missing values. 
+Documentation:  http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html
+                http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.from_product.html
+
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://stackoverflow.com/questions/44287445/pandas-or-python-equivalent-of-tidyr-complete
 
 Working example (asap):
 
 ```Python
+import pandas as pd
+df = pd.DataFrame({'user':[1, 1, 2, 3, 3, 3], 'x':['a', 'b', 'a', 'a', 'c', 'd'], 'y':1})
+print(df)
+df = df.set_index(['user','x'])
+mux = pd.MultiIndex.from_product([df.index.levels[0], df.index.levels[1]],names=['user','x'])
+df = df.reindex(mux, fill_value=0).reset_index()
+print(df)
 ```
