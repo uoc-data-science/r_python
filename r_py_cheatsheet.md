@@ -144,6 +144,7 @@ _Official documentation_: https://www.rdocumentation.org/packages/dplyr/versions
 
 _Good help, tutorials_:
 
+
 1. [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
 2. https://www.guru99.com/r-select-filter-arrange.html#2
 
@@ -469,30 +470,47 @@ _Official documentation_:
 
 _Good help, tutorials_:
 
-1. ...
-1. ...
-1. ...
+Official documentation: https://www.rdocumentation.org/packages/tidyr/versions/0.8.3/topics/spread
+Good help, tutorials:
+1. https://r4ds.had.co.nz/tidy-data.html#spreading
 
 Working example (asap):
 
 ```R
+
+library(tidyverse)
+#print(table2)
+
+table2 %>%
+  spread(key = type, value = count)
 ```
 
 ### Python
 
-_Purpose_:
+_Purpose_: pivot_table() takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.
 
-_Official documentation_:
+_Official documentation_: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
 
 _Good help, tutorials_:
 
-1. ...
-1. ...
-1. ...
+1. https://community.periscopedata.com/t/q5gk76/pivoting-and-melting-dataframes
 
 Working example (asap):
 
 ```Python
+import pandas as pd
+
+#sample data
+d = {'country': ['Afghanistan', 'Afghanistan', 'Afghanistan', 'Afghanistan', 'Brazil', 'Brazil', 'Brazil', 'Brazil'], 'year': [1999, 1999, 2000, 2000, 1999, 1999, 2000, 2000,], 'type': ['cases', 'population', 'cases', 'population', 'cases', 'population', 'cases', 'population'], 'count': [745, 19987071, 2666, 20595360, 37737, 172006362, 80488, 174504898]}
+
+#log sample data as table
+df = pd.DataFrame(data=d)
+print(df)
+
+#log spread data
+df=pd.pivot_table(df,index='country',columns='type',values='count')
+
+print(df)
 ```
 
 ---
@@ -679,4 +697,100 @@ _Good help, tutorials_:
 Working example (asap):
 
 ```Python
+```
+
+---
+
+## `complete`
+
+
+### R
+
+_Purpose_: Turn implicilty missing values in a long data format into explicitly missing
+values (using _NA_ or special values )
+
+_Official documentation_: https://tidyr.tidyverse.org/reference/complete.html
+
+_Good help, tutorials_:
+
+1. https://blog.exploratory.io/populating-missing-dates-with-complete-and-fill-functions-in-r-and-exploratory-79f2a321e6b5
+
+
+Working example:
+
+```R
+library(tidyverse)
+
+data <- tibble("sex" = c("m", "m", "f"),
+               "treatment" = c("A", "B", "A"),
+               "results" = rnorm(3))
+print(data)
+
+# A tibble: 3 x 3
+#   sex   treatment results
+#   <chr> <chr>       <dbl>
+# 1 m     A          -0.135
+# 2 m     B          -1.99
+# 3 f     A           0.465
+
+# as can be seen, the case sex=f & treatment=B is missing
+
+data <- complete(data, sex, treatment, fill = list("results" = "-99"))
+
+print(data)
+# A tibble: 4 x 3
+#   sex   treatment results
+#   <chr> <chr>     <chr>
+# 1 f     A         0.464851026534199
+# 2 f     B         -99
+# 3 m     A         -0.134708501608753
+# 4 m     B         -1.9857518802666
+
+# now it's there
+```
+
+### Python
+
+Purpose: Turns implicit missing values into explicit missing values.<br>
+Documentation:<br>  http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html<br>
+                http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.from_product.html
+
+Good help, tutorials:
+
+1. https://stackoverflow.com/questions/44287445/pandas-or-python-equivalent-of-tidyr-complete
+
+Working example (asap):
+
+```Python
+import pandas as pd
+df = pd.DataFrame({'user':[1, 1, 2, 3, 3, 3], 'x':['a', 'b', 'a', 'a', 'c', 'd'], 'y':1})
+
+print(df)
+#   user  x  y
+#0     1  a  1
+#1     1  b  1
+#2     2  a  1
+#3     3  a  1
+#4     3  c  1
+#5     3  d  1
+
+
+df = df.set_index(['user','x'])
+mux = pd.MultiIndex.from_product([df.index.levels[0], df.index.levels[1]],names=['user','x'])
+df = df.reindex(mux, fill_value=0).reset_index()
+
+print(df)
+#    user  x  y
+#0      1  a  1
+#1      1  b  1
+#2      1  c  0
+#3      1  d  0
+#4      2  a  1
+#5      2  b  0
+#6      2  c  0
+#7      2  d  0
+#8      3  a  1
+#9      3  b  0
+#10     3  c  1
+#11     3  d  1
 ```
