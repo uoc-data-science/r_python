@@ -452,32 +452,47 @@ print(gathered_data)
 
 ### R
 
-Purpose:
-Official documentation:
-Good help, tutorials:
+Purpose: spread() takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.
 
-1. ...
-1. ...
-1. ...
+Official documentation: https://www.rdocumentation.org/packages/tidyr/versions/0.8.3/topics/spread
+Good help, tutorials:
+1. https://r4ds.had.co.nz/tidy-data.html#spreading
 
 Working example (asap):
 
 ```R
+
+library(tidyverse)
+#print(table2)
+
+table2 %>%
+  spread(key = type, value = count)
 ```
 
 ### Python
 
-Purpose:
-Documentation:
+Purpose: pivot_table() takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.
+Documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.pivot_table.html
 Good help, tutorials:
 
-1. ...
-1. ...
-1. ...
+1. https://community.periscopedata.com/t/q5gk76/pivoting-and-melting-dataframes
 
 Working example (asap):
 
 ```Python
+import pandas as pd
+
+#sample data
+d = {'country': ['Afghanistan', 'Afghanistan', 'Afghanistan', 'Afghanistan', 'Brazil', 'Brazil', 'Brazil', 'Brazil'], 'year': [1999, 1999, 2000, 2000, 1999, 1999, 2000, 2000,], 'type': ['cases', 'population', 'cases', 'population', 'cases', 'population', 'cases', 'population'], 'count': [745, 19987071, 2666, 20595360, 37737, 172006362, 80488, 174504898]}
+
+#log sample data as table
+df = pd.DataFrame(data=d)
+print(df)
+
+#log spread data
+df=pd.pivot_table(df,index='country',columns='type',values='count')
+
+print(df)
 ```
 
 ---
