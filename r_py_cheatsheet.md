@@ -41,9 +41,9 @@ Good help, tutorials:
 Working example (asap):
 
 ``` R
-##save column u and column v in a new table: 
+##save column u and column v in a new table:
 
-#new_dataset <- select(source_dataset, cloumn_name_u, column_name_v) 
+#new_dataset <- select(source_dataset, cloumn_name_u, column_name_v)
 library(nycflights13)
 library(tidyverse)
 
@@ -145,7 +145,7 @@ df.loc[lambda d: (d.A > 7) & (d.B < 4)]
 
 Purpose: Use "filter" to find rows/cases meeting certain conditions.<br>
 Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/filter<br>
-Good help, tutorials: 
+Good help, tutorials:
 
 1. [R for Data Science](https://r4ds.had.co.nz/transform.html#filter-rows-with-filter)
 2. https://www.guru99.com/r-select-filter-arrange.html#2
@@ -253,7 +253,7 @@ df = df.sort_values(by=['sepal.length', 'sepal.width'], ascending=[True, False],
 
 Purpose: Put functions on existing columns and add new columns including the result of the applied function. If you additionally want to drop the old variable/column, use 'transmute'.<br>
 Official documentation: https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/mutate<br>
-Good help, tutorials: 
+Good help, tutorials:
 
 1. https://r4ds.had.co.nz/transform.html#add-new-variables-with-mutate
 1. https://cran.r-project.org/web/packages/dplyr/dplyr.pdf - page 45
@@ -665,4 +665,100 @@ Good help, tutorials:
 Working example (asap):
 
 ```Python
+```
+
+---
+
+## `complete`
+
+
+### R
+
+_Purpose_: Turn implicilty missing values in a long data format into explicitly missing
+values (using _NA_ or special values )
+
+_Official documentation_: https://tidyr.tidyverse.org/reference/complete.html
+
+_Good help, tutorials_:
+
+1. https://blog.exploratory.io/populating-missing-dates-with-complete-and-fill-functions-in-r-and-exploratory-79f2a321e6b5
+
+
+Working example:
+
+```R
+library(tidyverse)
+
+data <- tibble("sex" = c("m", "m", "f"),
+               "treatment" = c("A", "B", "A"),
+               "results" = rnorm(3))
+print(data)
+
+# A tibble: 3 x 3
+#   sex   treatment results
+#   <chr> <chr>       <dbl>
+# 1 m     A          -0.135
+# 2 m     B          -1.99
+# 3 f     A           0.465
+
+# as can be seen, the case sex=f & treatment=B is missing
+
+data <- complete(data, sex, treatment, fill = list("results" = "-99"))
+
+print(data)
+# A tibble: 4 x 3
+#   sex   treatment results
+#   <chr> <chr>     <chr>
+# 1 f     A         0.464851026534199
+# 2 f     B         -99
+# 3 m     A         -0.134708501608753
+# 4 m     B         -1.9857518802666
+
+# now it's there
+```
+
+### Python
+
+Purpose: Turns implicit missing values into explicit missing values.<br>
+Documentation:<br>  http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reindex.html<br>
+                http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.MultiIndex.from_product.html
+
+Good help, tutorials:
+
+1. https://stackoverflow.com/questions/44287445/pandas-or-python-equivalent-of-tidyr-complete
+
+Working example (asap):
+
+```Python
+import pandas as pd
+df = pd.DataFrame({'user':[1, 1, 2, 3, 3, 3], 'x':['a', 'b', 'a', 'a', 'c', 'd'], 'y':1})
+
+print(df)
+#   user  x  y
+#0     1  a  1
+#1     1  b  1
+#2     2  a  1
+#3     3  a  1
+#4     3  c  1
+#5     3  d  1
+
+
+df = df.set_index(['user','x'])
+mux = pd.MultiIndex.from_product([df.index.levels[0], df.index.levels[1]],names=['user','x'])
+df = df.reindex(mux, fill_value=0).reset_index()
+
+print(df)
+#    user  x  y
+#0      1  a  1
+#1      1  b  1
+#2      1  c  0
+#3      1  d  0
+#4      2  a  1
+#5      2  b  0
+#6      2  c  0
+#7      2  d  0
+#8      3  a  1
+#9      3  b  0
+#10     3  c  1
+#11     3  d  1
 ```
